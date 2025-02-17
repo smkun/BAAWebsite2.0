@@ -1,0 +1,54 @@
+/* CSS/utilities/responsive.css */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        margin: 5px 0;
+        padding: 10px;
+    }
+
+    .section-container {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .student-list {
+        grid-template-columns: 1fr;
+    }
+
+    .student-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .student-card img {
+        margin: 0 0 10px 0;
+    }
+
+    .team-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 20px;
+    }
+
+    .tab-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .content-container {
+        padding: 10px;
+    }
+
+    .about-section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+}

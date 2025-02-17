@@ -1,0 +1,20 @@
+/* CSS/main.css */
+@import "BASE/variables.css";
+@import "BASE/fonts.css";
+@import "BASE/reset.css";
+@import "BASE/layout.css";
+
+@import "COMPONENTS/header.css";
+@import "COMPONENTS/nav.css";
+@import "COMPONENTS/images.css";
+@import "COMPONENTS/cards.css";
+@import "COMPONENTS/buttons.css";
+@import "COMPONENTS/links.css";
+
+@import "SECTIONS/home.css";
+@import "SECTIONS/faculty.css";
+@import "SECTIONS/students.css";
+@import "SECTIONS/database.css";
+@import "SECTIONS/about.css";
+
+@import "UTILITIES/responsive.css";

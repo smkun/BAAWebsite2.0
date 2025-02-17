@@ -1,0 +1,16 @@
+/* CSS/components/images.css */
+.home-image, .content-image {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.content-image {
+    max-width: 500px;
+    height: auto;
+    margin: 20px auto;
+}

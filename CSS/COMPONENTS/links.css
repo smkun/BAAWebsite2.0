@@ -1,0 +1,22 @@
+/* CSS/components/links.css */
+a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.profile-link, .briefing-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.profile-link:hover,
+.briefing-link:hover {
+    color: #a12234;
+    text-decoration: underline;
+}

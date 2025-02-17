@@ -1,0 +1,11 @@
+/* CSS/base/variables.css */
+:root {
+    --primary-bg: #d6dde2;
+    --header-bg-start: #8a9aa8;
+    --header-bg-end: #728192;
+    --section-bg: #ebf5ff;
+    --accent-color: #c72c41;
+    --text-color: #333333;
+    --nav-font-color: #062758;
+    --nav-link-hover-bg: rgba(25, 118, 210, 0.3);
+}

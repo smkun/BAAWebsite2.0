@@ -1,0 +1,33 @@
+/* CSS/base/fonts.css */
+@font-face {
+    font-family: "Heroes Assemble Expanded Italic";
+    src: url("../../FONTS/HeroesAssembleExpandedItalic-wzEw.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "American Captain";
+    src: url("../../FONTS/AmericanCaptain-MdEY.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Iron Man of War";
+    src: url("../../FONTS/IronManOfWar2Ncv-E85l.ttf") format("truetype");
+}
+
+/* Base Typography */
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+p {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Iron Man of War", sans-serif;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}

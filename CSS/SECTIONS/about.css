@@ -1,0 +1,51 @@
+/* CSS/sections/about.css */
+.about-section {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* List styles for about section */
+.about-section ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.about-section ul li {
+    margin: 10px 0;
+    position: relative;
+}
+
+.about-section ul li:before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: -20px;
+}
+
+/* Loading and Error States */
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: var(--accent-color);
+}
+
+.error-message {
+    color: #ff0000;
+    padding: 20px;
+    text-align: center;
+    background: #ffe6e6;
+    border-radius: 4px;
+    margin: 10px 0;
+}

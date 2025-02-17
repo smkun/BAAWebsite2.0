@@ -1,0 +1,61 @@
+/* CSS/components/cards.css */
+/* Student Card */
+.student-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.student-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.student-info h3 {
+    margin: 0;
+    font-size: 26px;
+    color: var(--accent-color);
+}
+
+.student-info p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Faculty Card */
+.faculty-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.faculty-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.faculty-info h3 {
+    font-size: 26px;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.faculty-info p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}

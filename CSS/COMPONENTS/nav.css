@@ -1,0 +1,38 @@
+/* CSS/components/nav.css */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    font-family: "American Captain", sans-serif;
+    color: var(--nav-font-color);
+    text-decoration: none;
+    margin: 5px 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s;
+    font-size: 22px;
+}
+
+nav a:hover {
+    background: var(--nav-link-hover-bg);
+}
+
+/* Move navigation-specific styles from header to here */
+header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header nav a {
+    font-family: "American Captain", sans-serif;
+    color: var(--nav-font-color);
+    text-decoration: none;
+    margin: 5px 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s;
+    font-size: 22px;
+}
