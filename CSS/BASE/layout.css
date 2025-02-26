@@ -57,3 +57,6 @@ body {
     width: 100%;
     box-sizing: border-box;
 }
+#footer-container {
+     text-align: center;
+}
