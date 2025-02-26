@@ -70,50 +70,90 @@ class ContentLoader {
 
     // Get the appropriate path to components based on current page depth
     getComponentPath() {
-        // Check if we're in a subfolder by looking at the URL path
-        const pathSegments = window.location.pathname.split('/');
-        const depth = pathSegments.length - 1; // How deep we are in the folder structure
+        // Get the current URL path
+        const path = window.location.pathname;
+        console.log("Current pathname:", path);
         
-        if (depth <= 1) {
-            // We're at the root level
-            return "COMPONENTS/";
-        } else {
-            // We're in a subfolder, need to go up
-            // Create the appropriate number of "../" based on depth
-            const upPath = Array(depth - 1).fill("..").join("/");
-            return `${upPath}/COMPONENTS/`;
+        // Hardcoded path mapping for specific page patterns
+        // Adjust these patterns based on your actual file structure
+        
+        // For pages in SECTIONS/HEROES/ like 9alarm.html
+        if (path.includes('/SECTIONS/HEROES/') || path.includes('/HEROES/')) {
+            console.log("Hero page detected, using hardcoded path");
+            return "../../COMPONENTS/";
         }
+        
+        // For pages in other SECTIONS
+        if (path.includes('/SECTIONS/')) {
+            console.log("Section page detected, using hardcoded path");
+            return "../../COMPONENTS/";
+        }
+        
+        // For index or root-level pages
+        if (path === '/' || path.endsWith('index.html') || path === '') {
+            console.log("Index page detected, using root path");
+            return "COMPONENTS/";
+        }
+        
+        // Default fallback - try two levels up
+        console.log("Using default fallback path");
+        return "../../COMPONENTS/";
     }
 
     // Get path to index.html from current location
     getPathToRoot() {
-        const pathSegments = window.location.pathname.split('/');
-        const depth = pathSegments.length - 1;
+        // Similar hardcoded approach to match getComponentPath
+        const path = window.location.pathname;
         
-        if (depth <= 1) {
-            return "./";
-        } else {
-            // Create the appropriate number of "../" based on depth
-            return Array(depth - 1).fill("..").join("/") + "/";
+        // For pages in SECTIONS/HEROES/ like 9alarm.html
+        if (path.includes('/SECTIONS/HEROES/') || path.includes('/HEROES/')) {
+            return "../../";
         }
+        
+        // For pages in other SECTIONS
+        if (path.includes('/SECTIONS/')) {
+            return "../../";
+        }
+        
+        // For index or root-level pages
+        if (path === '/' || path.endsWith('index.html') || path === '') {
+            return "./";
+        }
+        
+        // Default fallback
+        return "../../";
     }
 
-    // Adjust navigation links for subpages
+    // Better method to adjust header links using DOM manipulation
     adjustHeaderLinks(headerContent) {
         if (!this.isSubPage) {
-            return headerContent; // No changes needed for main page
+            return headerContent;
         }
+        
+        // Create a temporary DOM element to parse the HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = headerContent;
+        
+        // Find all links in the header
+        const links = tempDiv.querySelectorAll('a');
         
         // Get the path to root
         const rootPath = this.getPathToRoot();
+        console.log("Root path for links:", rootPath);
         
-        // Replace href="#section" with href="rootPath/index.html#section"
-        const modifiedContent = headerContent.replace(
-            /href="#([^"]+)"/g, 
-            `href="${rootPath}index.html#$1"`
-        );
+        // Update each link
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                // Make sure we're using the correct path to index.html
+                const newHref = `${rootPath}index.html${href}`;
+                console.log(`Changing link from ${href} to ${newHref}`);
+                link.setAttribute('href', newHref);
+            }
+        });
         
-        return modifiedContent;
+        // Return the modified HTML
+        return tempDiv.innerHTML;
     }
 
     async loadHeaderForSubPage() {
